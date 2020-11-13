@@ -1,0 +1,49 @@
+html {
+    box-sizing: border-box;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--f-body);
+    font-size: 1.1rem;
+    font-weight: var(--fw-light);
+    background-color: var(--body__bg);
+    color: var(--body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1.1rem;
+    font-family: var(--f-heading);
+    font-weight: var(--fw-regular);
+    color: var(--primary);
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 1.1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+a, button {
+    outline: 0;
+}
+
+strong {
+    font-weight: var(--fw-regular);
+    color: var(--primary);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

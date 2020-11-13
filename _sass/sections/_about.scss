@@ -1,0 +1,83 @@
+.about {
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include for-size(lg-up) {
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__img {
+        flex-basis: 100%;
+        position: relative;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        background: $base-95 url('../img/bg-thumb.webp');
+        overflow: hidden;
+        animation: slide 30s linear infinite;
+
+        img {
+            margin: auto;
+            filter: drop-shadow(0px 12px 10px rgba(#000, 0.30));
+            transform: translateZ(0);
+        }
+
+        @include for-size(lg-up) {
+            flex-basis: 40%;
+            margin-bottom: 0;
+        }
+    }
+
+    &__content {
+        @include for-size(lg-up) {
+            flex-basis: 55%;
+        }
+    }
+
+    &__intro {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    &__skills {
+        margin-top: 2rem;
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            li {
+                padding: 16px 0;
+                width: 22%;
+                font-size: 0.70rem;
+                text-align: center;
+                letter-spacing: 0.50px;
+
+                @include for-size(md-up) {
+                    width: 12%;
+                }
+            }
+
+            img {
+                margin: 0 auto 0.50rem;
+                width: 30px;
+                opacity: 80%;
+            }
+
+            @include for-size(md-up) {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    @include for-size(md-up) {
+        padding-top: 150px;
+    }
+
+    @include for-size(lg-up) {
+        height: 100vh;
+    }
+}

@@ -1,0 +1,19 @@
+.container {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 24px;
+    padding-left: 24px;
+    width: 100%;
+
+    @include for-size(md-up) {
+        padding-right: 64px;
+        padding-left: 64px;
+    }
+
+    @include for-size(lg-up) {
+        padding-right: 0;
+        padding-left: 0;
+        width: 1140px;
+    }
+}

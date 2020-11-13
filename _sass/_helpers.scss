@@ -1,0 +1,26 @@
+.has-line {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 1px solid currentColor;
+        width: 0;
+        filter: opacity(0);
+        transition: width 0.30s ease-out, filter 0.30s ease-out;
+    }
+
+    &:hover {
+        &::after {
+            width: 100%;
+            filter: opacity(1);
+        }
+    }
+}
+
+.invert {
+    filter: var(--helper__invert);
+    transition: filter 0.15s ease-out;
+}

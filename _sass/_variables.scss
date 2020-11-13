@@ -1,0 +1,22 @@
+$base: #121212;
+$base-30: tint($base, 30%);
+$base-60: tint($base, 60%);
+$base-90: tint($base, 90%);
+$base-95: tint($base, 95%);
+
+:root {
+    --f-heading: 'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, sans-serif;
+    --f-body: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, sans-serif;
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+}
+
+// dark
+[data-theme="0"] {
+    --primary: #{$base-90};
+    --body__bg: #{$base};
+    --body: #{$base-60};
+    --section__title: #{$base-30};
+    --helper__invert: invert(0);
+}

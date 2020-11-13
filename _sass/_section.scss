@@ -1,0 +1,26 @@
+.section {
+    position: relative;
+    padding-top: 96px;
+    padding-bottom: 96px;
+
+    &-title {
+        margin-bottom: 0.50rem;
+        font-family: var(--f-heading);
+        font-size: 0.90rem;
+        font-weight: var(--fw-medium);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--section__title);
+
+        &-container {
+            margin-bottom: 96px;
+            text-align: center;
+        }
+    }
+
+    &-subtitle {
+        font-size: 1.75rem;
+        text-transform: capitalize;
+        color: var(--primary);
+    }
+}
