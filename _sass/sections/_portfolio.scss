@@ -1,0 +1,90 @@
+.portfolio {
+    background-color: var(--portfolio__bg);
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--portfolio__item-border);
+        }
+
+        &:hover {
+            @include for-size(lg-up) {
+                .portfolio__item-thumb {
+                    filter: opacity(1);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        &-details {
+            @include for-size(md-up) {
+                flex-basis: 65%;
+            }
+
+            @include for-size(lg-up) {
+                flex-basis: 55%;
+            }
+        }
+
+        &-title {
+            font-size: 1.4rem;
+        }
+
+        &-tech {
+            display: flex;
+            margin-bottom: 1rem;
+
+            li {
+                font-size: 0.70rem;
+                font-weight: var(--fw-regular);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: var(--secondary);
+
+                &:not(:last-child) {
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+        &-links {
+            display: flex;
+            font-size: 1.4rem;
+
+            li:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+
+        &-thumb {
+            margin: 0 auto 1rem;
+            width: 250px;
+            pointer-events: none;
+
+            @include for-size(md-up) {
+                flex-basis: 30%;
+                align-self: stretch;
+                margin: 0;
+                width: auto;
+            }
+
+            @include for-size(lg-up) {
+                position: absolute;
+                top: 50%;
+                right: 16px;
+                width: 400px;
+                height: 400px;
+                filter: opacity(0);
+                transform: translateY(-45%);
+                transition: filter 0.30s ease-out, transform 0.30s ease-out;
+            }
+        }
+    }
+}

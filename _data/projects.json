@@ -1,0 +1,18 @@
+[
+    {
+        "name": "covid19-philippines ",
+        "description": "A simple coronavirus tracker app for Philippines.",
+        "thumbnail": "project-covid-19-tracker-philippines.webp",
+        "url": "https://covid19-philippines.netlify.app/",
+        "repo": "https://github.com/jayveepvalenzuela/covid19-philippines",
+        "tech": ["Pug", "Sass", "JavaScript", "Gulp"]
+    },
+    {
+        "name": "jayveepvalenzuela.github.io",
+        "description": "My portfolio website built with Jekyll. Animations are handled with GSAP and CSS.",
+        "thumbnail": "project-jayveepvalenzuela-github-io.webp",
+        "url": "https://jayveepvalenzuela.github.io/",
+        "repo": "https://github.com/jayveepvalenzuela/jayveepvalenzuela.github.io",
+        "tech": ["Jekyll", "HTML", "Sass", "JavaScript", "GSAP"]
+    }
+]
