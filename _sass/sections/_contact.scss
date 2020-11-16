@@ -1,0 +1,19 @@
+.contact {
+    &__list {
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+
+        li:not(:last-child) {
+            margin-right: 2rem;
+
+            @include for-size(md-up) {
+                margin-right: 3rem;
+            }
+        }
+
+        @include for-size(md-up) {
+            font-size: 2.5rem;
+        }
+    }
+}
