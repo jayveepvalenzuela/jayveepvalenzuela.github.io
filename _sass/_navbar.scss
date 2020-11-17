@@ -1,0 +1,108 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: var(--layer-1);
+    padding: 32px 24px;
+    width: 100%;
+    pointer-events: none;
+
+    a {
+        display: block;
+        padding: 16px;
+        font-family: var(--f-heading);
+        font-size: 0.90rem;
+        font-weight: var(--fw-medium);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        pointer-events: auto;
+        color: var(--secondary);
+
+        &.active, &:hover {
+            color: var(--primary);
+        }
+
+        @include for-size(md-up) {
+            padding: 0;
+        }
+    }
+
+    &__logo {
+        padding: 0 !important;
+        width: 18px;
+    }
+
+    &__toggle {
+        z-index: var(--layer-1);
+        border: none;
+        padding: 0;
+        font-size: 2rem;
+        background-color: transparent;
+        color: var(--primary);
+        pointer-events: auto;
+
+        &::after {
+            content: '\f0c9';
+        }
+
+        @include for-size(md-up) {
+            display: none;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80vw;
+        height: 100vh;
+        background-color: var(--navbar__menu-bg);
+        box-shadow: 0 0 16px rgba(#000, 0.30);
+        transform: translateX(80vw);
+        transition: transform 0.30s ease-out, background-color 0.15s ease-out;
+
+        &.visible {
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        li {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+
+            &:not(:last-child) {
+                margin-right: 0;
+
+                @include for-size(md-up) {
+                    margin-right: 3rem;
+                }
+            }
+
+            @include for-size(md-up) {
+                width: auto;
+                text-align: left;
+            }
+        }
+
+        @include for-size(md-up) {
+            display: block;
+            position: static;
+            width: auto;
+            height: auto;
+            background-color: transparent;
+            box-shadow: none;
+            transform: none;
+        }
+    }
+
+    @include for-size(md-up) {
+        padding: 64px;
+    }
+}
