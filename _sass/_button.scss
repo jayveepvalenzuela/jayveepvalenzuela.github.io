@@ -1,0 +1,47 @@
+.btn {
+    &-theme-toggle {
+        position: fixed;
+        right: 24px;
+        bottom: 32px;
+        border: none;
+        padding: 0;
+        font-size: 3rem;
+        z-index: var(--layer-2);
+        background-color: transparent;
+        color: var(--primary);
+
+        &::before, &::after {
+            display: block;
+            transform: translateY(3rem);
+            transition: transform 0.15s ease-out, filter 0.15s ease-out;
+        }
+
+        &::before {
+            content: '\f186';
+        }
+
+        &::after {
+            content: '\f185';
+            filter: opacity(0);
+        }
+
+        &.light {
+            &::before, &::after {
+                transform: translateY(0);
+            }
+
+            &::before {
+                filter: opacity(0);
+            }
+
+            &::after {
+                filter: opacity(1);
+            }
+        }
+
+        @include for-size(md-up) {
+            right: 64px;
+            bottom: 64px;
+        }
+    }
+}

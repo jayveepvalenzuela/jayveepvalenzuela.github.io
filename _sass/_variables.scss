@@ -2,10 +2,13 @@ $base: #121212;
 $base-5: tint($base, 5%);
 $base-10: tint($base, 10%);
 $base-30: tint($base, 30%);
+$base-40: tint($base, 40%);
 $base-50: tint($base, 50%);
 $base-60: tint($base, 60%);
+$base-70: tint($base, 70%);
 $base-90: tint($base, 90%);
 $base-95: tint($base, 95%);
+$base-100: tint($base, 100%);
 
 :root {
     --f-heading: 'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, sans-serif;
@@ -14,6 +17,7 @@ $base-95: tint($base, 95%);
     --fw-regular: 400;
     --fw-medium: 500;
     --layer-1: 100;
+    --layer-2: 200;
 }
 
 // dark
@@ -28,4 +32,18 @@ $base-95: tint($base, 95%);
     --portfolio__bg: #{$base-5};
     --portfolio__item-border: #{$base-10};
     --helper__invert: invert(0);
+}
+
+// light
+[data-theme="1"] {
+    --primary: #{$base-10};
+    --secondary: #{$base-50};
+    --body__bg: #{$base-100};
+    --body: #{$base-40};
+    --navbar__menu-bg: #{$base-90};
+    --footer__copyright: #{$base-70};
+    --section__title: #{$base-70};
+    --portfolio__bg: #{$base-95};
+    --portfolio__item-border: #{$base-90};
+    --helper__invert: invert(1);
 }

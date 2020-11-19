@@ -1,5 +1,8 @@
+const createElement = (el) => document.createElement(el);
 const selectElement = (el) => document.querySelector(el);
 const selectAllElements = (el) => document.querySelectorAll(el);
+
+const body = document.body;
 
 // init scrollmagic controller
 const scrollmagicController = new ScrollMagic.Controller();
@@ -9,6 +12,15 @@ const navbarMenu = selectElement('.navbar__menu');
 
 selectElement('.navbar__toggle').addEventListener('click', () => {
     navbarMenu.classList.toggle('visible');
+});
+
+// theme toggle
+const btnThemeToggle = body.appendChild(createElement('button'));
+
+btnThemeToggle.classList.add('btn-theme-toggle', 'lar');
+
+btnThemeToggle.addEventListener('click', (ev) => {
+    body.setAttribute('data-theme', Number(ev.target.classList.toggle('light')));
 });
 
 window.addEventListener('load', () => {

@@ -13,7 +13,7 @@
                     {% assign skills = site.data.skills | sort: 'name' %}
                     {% for skill in skills %}
                         <li>
-                            <img src="/assets/img/logo-{{ skill.name | downcase | remove: '.' }}.webp" alt="{{ skill.name }} logo">
+                            <img class="invert" src="/assets/img/logo-{{ skill.name | downcase | remove: '.' }}.webp" alt="{{ skill.name }} logo">
                             {{ skill.name }}
                         </li>
                     {% endfor %}
