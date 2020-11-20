@@ -7,6 +7,11 @@ const body = document.body;
 // init scrollmagic controller
 const scrollmagicController = new ScrollMagic.Controller();
 
+// lazy load images
+selectAllElements('.lazy').forEach((el) => {
+    el.src = el.dataset.src;
+});
+
 // navbar toggle
 const navbarMenu = selectElement('.navbar__menu');
 

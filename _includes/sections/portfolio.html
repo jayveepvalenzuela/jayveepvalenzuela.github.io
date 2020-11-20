@@ -7,7 +7,7 @@
         {% for project in site.data.projects %}
             <div class="portfolio__item">
                 <div class="portfolio__item-thumb">
-                    <img src="/assets/img/{{ project.thumbnail }}" alt="">
+                    <img class="lazy" src="/assets/img/blank.png" data-src="/assets/img/{{ project.thumbnail }}" alt="">
                 </div>
                 <div class="portfolio__item-details">
                     <h3 class="portfolio__item-title">
