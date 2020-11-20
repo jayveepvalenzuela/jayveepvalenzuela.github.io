@@ -30,6 +30,7 @@ links:
   linkedin: "https://linkedin.com/in/jayveepvalenzuela"
   github: "https://github.com/jayveepvalenzuela"
   codepen: "https://codepen.io/jayveepvalenzuela"
+theme_color: "#121212"
 
 # Build settings
 theme: minima
