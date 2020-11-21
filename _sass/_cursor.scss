@@ -1,0 +1,53 @@
+.cursor {
+    &-pointer {
+        display: none;
+        position: fixed;
+        user-select: none;
+        pointer-events: none;
+        font-weight: var(--fw-regular);
+        z-index: var(--layer-3);
+
+        &::after {
+            content: '•';
+            position: absolute;
+            top: -17px;
+            left: -5.5px;
+            font-size: 40px;
+            color: var(--primary);
+            transition: filter 0.20s ease-out;
+        }
+
+        &.hover {
+            &::after {
+                filter: opacity(0);
+            }
+
+            .cursor-ring {
+                transform: scale(1.75);
+            }
+        }
+
+        @include for-size(lg-up) {
+            display: block;
+        }
+    }
+
+    &-ring {
+        display: none;
+        position: fixed;
+        border-radius: 100%;
+        width: 36px;
+        height: 36px;
+        user-select: none;
+        pointer-events: none;
+        z-index: var(--layer-3);
+        transform: translate(0, 0);
+        background-color: var(--primary);
+        filter: opacity(20%);
+        transition: transform 0.60s cubic-bezier(0.75, -1.27, 0.30, 2.33);
+
+        @include for-size(lg-up) {
+            display: block;
+        }
+    }
+}

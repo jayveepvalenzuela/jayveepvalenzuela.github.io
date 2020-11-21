@@ -15,6 +15,10 @@ body {
     font-weight: var(--fw-light);
     background-color: var(--body__bg);
     color: var(--body);
+
+    @include for-size(lg-up) {
+        cursor: none;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,6 +40,10 @@ a {
 
 a, button {
     outline: 0;
+
+    @include for-size(lg-up) {
+        cursor: inherit;
+    }
 }
 
 strong {
