@@ -1,7 +1,13 @@
 .about {
+    .particles-js-canvas-el {
+        position: absolute;
+        top: 0;
+    }
+
     &__container {
         display: flex;
         flex-wrap: wrap;
+        z-index: var(--layer-1);
 
         @include for-size(lg-up) {
             justify-content: space-between;

@@ -4,7 +4,7 @@
     align-items: center;
     position: fixed;
     top: 0;
-    z-index: var(--layer-1);
+    z-index: var(--layer-2);
     padding: 32px 24px;
     width: 100%;
     pointer-events: none;
@@ -35,7 +35,7 @@
     }
 
     &__toggle {
-        z-index: var(--layer-1);
+        z-index: var(--layer-2);
         border: none;
         padding: 0;
         font-size: 2rem;

@@ -5,7 +5,7 @@
         user-select: none;
         pointer-events: none;
         font-weight: var(--fw-regular);
-        z-index: var(--layer-3);
+        z-index: var(--layer-4);
 
         &::after {
             content: '•';
@@ -40,7 +40,7 @@
         height: 36px;
         user-select: none;
         pointer-events: none;
-        z-index: var(--layer-3);
+        z-index: var(--layer-4);
         transform: translate(0, 0);
         background-color: var(--primary);
         filter: opacity(20%);
