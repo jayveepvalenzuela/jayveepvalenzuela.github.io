@@ -1,0 +1,73 @@
+// poppins-regular
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+    url('../fonts/poppins-v15-latin-regular.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-regular.woff') format('woff');
+}
+
+// poppins-medium
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local(''),
+    url('../fonts/poppins-v15-latin-500.woff2') format('woff2'),
+    url('../fonts/poppins-v15-latin-500.woff') format('woff');
+}
+
+// work-sans-light
+@font-face {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local(''),
+    url('../fonts/work-sans-v8-latin-300.woff2') format('woff2'),
+    url('../fonts/work-sans-v8-latin-300.woff') format('woff');
+}
+
+// work-sans-regular
+@font-face {
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+    url('../fonts/work-sans-v8-latin-regular.woff2') format('woff2'),
+    url('../fonts/work-sans-v8-latin-regular.woff') format('woff');
+}
+
+// line-awesome-free-regular
+@font-face {
+    font-family: 'Line Awesome Free';
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: url('../fonts/la-regular-400.woff2') format('woff2'),
+    url('../fonts/la-regular-400.woff') format('woff');
+}
+
+// line-awesome-free-black
+@font-face {
+    font-family: 'Line Awesome Free';
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url('../fonts/la-solid-900.woff2') format('woff2'),
+    url('../fonts/la-solid-900.woff') format('woff');
+}
+
+// line-awesome-brand-regular
+@font-face {
+    font-family: 'Line Awesome Brands';
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+    src: url('../fonts/la-brands-400.woff2') format('woff2'),
+    url('../fonts/la-brands-400.woff') format('woff');
+}

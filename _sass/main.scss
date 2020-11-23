@@ -1,7 +1,9 @@
 @import 'mixins';
 @import 'functions';
+@import 'vendors/reset';
+@import 'vendors/line-awesome';
+@import 'fonts';
 @import 'variables';
-@import 'reset';
 @import 'base';
 @import 'grid';
 @import 'section';
@@ -9,8 +11,8 @@
 @import 'footer';
 @import 'button';
 @import 'cursor';
+@import 'helpers';
+@import 'keyframes';
 @import 'sections/about';
 @import 'sections/portfolio';
 @import 'sections/contact';
-@import 'helpers';
-@import 'keyframes';
