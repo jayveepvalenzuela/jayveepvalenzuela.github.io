@@ -12,9 +12,6 @@ selectAllElements('.lazy').forEach((el) => {
     el.src = el.dataset.src;
 });
 
-// start particles
-particlesJS.load('about', '/assets/js/particles.json');
-
 // theme toggle
 const btnThemeToggle = body.appendChild(createElement('button'));
 
@@ -110,4 +107,7 @@ window.addEventListener('load', () => {
         .duration(section.clientHeight)
         .addTo(scrollmagicController);
     });
+
+    // start particles
+    particlesJS.load('about', '/assets/js/particles.json');
 });
