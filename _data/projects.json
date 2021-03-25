@@ -14,5 +14,13 @@
         "url": "https://jayveepvalenzuela.github.io/",
         "repo": "https://github.com/jayveepvalenzuela/jayveepvalenzuela.github.io",
         "tech": ["Jekyll", "HTML", "Sass", "JavaScript", "GSAP"]
+    },
+    {
+        "name": "pokedex",
+        "description": "Pokédex app built with React.",
+        "thumbnail": "project-pokedex.webp",
+        "url": "https://pokedex-yellow.vercel.app/",
+        "repo": "https://github.com/jayveepvalenzuela/pokedex",
+        "tech": ["React", "TailwindCSS", "PokéAPI"]
     }
 ]
