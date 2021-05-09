@@ -20,11 +20,13 @@
                         {% endfor %}
                     </ul>
                     <ul class="portfolio__item-links">
-                        <li>
-                            <a class="cursor-animate" href="{{ project.repo }}" target="_blank" rel="noreferrer noopener">
-                                <i class="las la-code-branch"></i>
-                            </a>
-                        </li>
+                        {% if project.repo != "" %}
+                            <li>
+                                <a class="cursor-animate" href="{{ project.repo }}" target="_blank" rel="noreferrer noopener">
+                                    <i class="las la-code-branch"></i>
+                                </a>
+                            </li>
+                        {% endif %}
                         <li>
                             <a class="cursor-animate" href="{{ project.url }}" target="_blank" rel="noreferrer noopener">
                                 <i class="las la-external-link-alt"></i>
