@@ -16,6 +16,7 @@ selectAllElements('.lazy').forEach((el) => {
 const btnThemeToggle = body.appendChild(createElement('button'));
 
 btnThemeToggle.classList.add('btn-theme-toggle', 'lar', 'cursor-animate');
+btnThemeToggle.setAttribute('aria-label', 'Toggle theme');
 
 btnThemeToggle.addEventListener('click', (ev) => {
     body.setAttribute('data-theme', Number(ev.target.classList.toggle('light')));

@@ -7,7 +7,7 @@
         {% for project in site.data.projects %}
             <div class="portfolio__item">
                 <div class="portfolio__item-thumb">
-                    <img class="lazy" src="/assets/img/blank.png" data-src="/assets/img/{{ project.thumbnail }}" alt="">
+                    <img class="lazy" src="/assets/img/blank.png" data-src="/assets/img/{{ project.thumbnail }}" width="600" height="600" alt="">
                 </div>
                 <div class="portfolio__item-details">
                     <h3 class="portfolio__item-title">
@@ -22,7 +22,7 @@
                     <ul class="portfolio__item-links">
                         {% if project.repo != "" %}
                             <li>
-                                <a class="cursor-animate" href="{{ project.repo }}" target="_blank" rel="noreferrer noopener">
+                                <a class="cursor-animate" href="{{ project.repo }}" target="_blank" rel="noreferrer noopener" aria-label="Browse repository">
                                     <i class="las la-code-branch"></i>
                                 </a>
                             </li>
