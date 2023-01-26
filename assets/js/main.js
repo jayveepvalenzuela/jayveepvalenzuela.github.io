@@ -7,11 +7,6 @@ const body = document.body;
 // init scrollmagic controller
 const scrollmagicController = new ScrollMagic.Controller();
 
-// lazy load images
-selectAllElements('.lazy').forEach((el) => {
-    el.src = el.dataset.src;
-});
-
 // theme toggle
 const btnThemeToggle = body.appendChild(createElement('button'));
 
