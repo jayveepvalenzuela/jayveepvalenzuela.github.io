@@ -30,6 +30,7 @@
         background: $base-95 url('../img/bg-thumb.webp');
         overflow: hidden;
         animation: slide 30s linear infinite;
+        filter: drop-shadow(0 50px 2rem rgba(#000, 0.25));
 
         img {
             margin: auto;
@@ -88,6 +89,8 @@
 
     @include for-size(md-up) {
         padding-top: 150px;
+        display: flex;
+        align-items: center;
     }
 
     @include for-size(lg-up) {
