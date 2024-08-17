@@ -1,17 +1,17 @@
 .footer {
     display: flex;
     justify-content: center;
-    padding: 32px 24px;
+    padding: 64px 24px;
     text-transform: uppercase;
+
+    @include for-size(md-up) {
+        padding: 80px 64px;
+    }
 
     &__copyright {
         font-size: 70%;
         font-weight: var(--fw-regular);
         letter-spacing: 2px;
         color: var(--footer__copyright);
-    }
-
-    @include for-size(md-up) {
-        padding: 64px;
     }
 }

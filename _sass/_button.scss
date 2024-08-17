@@ -10,6 +10,11 @@
         background-color: transparent;
         color: var(--primary);
 
+        @include for-size(md-up) {
+            right: 64px;
+            bottom: 64px;
+        }
+
         &::before, &::after {
             display: block;
             transform: translateY(3rem);
@@ -37,11 +42,6 @@
             &::after {
                 filter: opacity(1);
             }
-        }
-
-        @include for-size(md-up) {
-            right: 64px;
-            bottom: 64px;
         }
     }
 }

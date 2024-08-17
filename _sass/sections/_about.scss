@@ -1,4 +1,19 @@
 .about {
+    @include for-size(md-below) {
+        padding-top: 144px;
+        padding-bottom: 144px;
+    }
+
+    @include for-size(md-up) {
+        display: flex;
+        align-items: center;
+    }
+
+    @include for-size(lg-up) {
+        height: 130vh;
+        padding-top: 0;
+    }
+
     .particles-js-canvas-el {
         position: absolute;
         top: 0;
@@ -32,15 +47,15 @@
         animation: slide 30s linear infinite;
         filter: drop-shadow(0 50px 2rem rgba(#000, 0.25));
 
+        @include for-size(lg-up) {
+            flex-basis: 40%;
+            margin-bottom: 0;
+        }
+
         img {
             margin: auto;
             filter: drop-shadow(0px 12px 10px rgba(#000, 0.30));
             transform: translateZ(0);
-        }
-
-        @include for-size(lg-up) {
-            flex-basis: 40%;
-            margin-bottom: 0;
         }
     }
 
@@ -63,6 +78,10 @@
             flex-wrap: wrap;
             justify-content: center;
 
+            @include for-size(md-up) {
+                justify-content: flex-start;
+            }
+
             li {
                 padding: 16px 0;
                 width: 22%;
@@ -80,20 +99,6 @@
                 width: 30px;
                 opacity: 80%;
             }
-
-            @include for-size(md-up) {
-                justify-content: flex-start;
-            }
         }
-    }
-
-    @include for-size(md-up) {
-        padding-top: 150px;
-        display: flex;
-        align-items: center;
-    }
-
-    @include for-size(lg-up) {
-        height: 100vh;
     }
 }

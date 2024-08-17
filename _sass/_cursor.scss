@@ -7,6 +7,10 @@
         font-weight: var(--fw-regular);
         z-index: var(--layer-4);
 
+        @include for-size(lg-up) {
+            display: block;
+        }
+
         &::after {
             content: '•';
             position: absolute;
@@ -25,10 +29,6 @@
             .cursor-ring {
                 transform: scale(1.75);
             }
-        }
-
-        @include for-size(lg-up) {
-            display: block;
         }
     }
 

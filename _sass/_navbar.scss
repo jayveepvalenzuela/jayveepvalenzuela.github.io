@@ -9,6 +9,10 @@
     width: 100%;
     pointer-events: none;
 
+    @include for-size(md-up) {
+        padding: 64px;
+    }
+
     a {
         display: block;
         padding: 16px;
@@ -20,13 +24,13 @@
         pointer-events: auto;
         color: var(--navbar__menu-link);
 
-        &.active, &:hover {
-            color: var(--primary);
-        }
-
         @include for-size(md-up) {
             padding: 0;
             color: var(--secondary);
+        }
+
+        &.active, &:hover {
+            color: var(--primary);
         }
     }
 
@@ -44,12 +48,12 @@
         color: var(--primary);
         pointer-events: auto;
 
-        &::after {
-            content: '\f0c9';
-        }
-
         @include for-size(md-up) {
             display: none;
+        }
+
+        &::after {
+            content: '\f0c9';
         }
     }
 
@@ -68,6 +72,16 @@
         transform: translateX(80vw);
         transition: transform 0.30s ease-out, background-color 0.15s ease-out;
 
+        @include for-size(md-up) {
+            display: block;
+            position: static;
+            width: auto;
+            height: auto;
+            background-color: transparent;
+            box-shadow: none;
+            transform: none;
+        }
+
         &.visible {
             transform: translateX(0);
             pointer-events: auto;
@@ -78,6 +92,11 @@
             width: 100%;
             text-align: center;
 
+            @include for-size(md-up) {
+                width: auto;
+                text-align: left;
+            }
+
             &:not(:last-child) {
                 margin-right: 0;
 
@@ -85,25 +104,6 @@
                     margin-right: 3rem;
                 }
             }
-
-            @include for-size(md-up) {
-                width: auto;
-                text-align: left;
-            }
         }
-
-        @include for-size(md-up) {
-            display: block;
-            position: static;
-            width: auto;
-            height: auto;
-            background-color: transparent;
-            box-shadow: none;
-            transform: none;
-        }
-    }
-
-    @include for-size(md-up) {
-        padding: 64px;
     }
 }

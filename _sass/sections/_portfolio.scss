@@ -1,5 +1,10 @@
 .portfolio {
     background-color: var(--portfolio__bg);
+    transform: skew(0, -4.5deg) translateY(calc(50vw/-12));
+
+    .container {
+        transform: skew(0, 4.5deg) translateY(0);
+    }
 
     &__item {
         display: flex;
