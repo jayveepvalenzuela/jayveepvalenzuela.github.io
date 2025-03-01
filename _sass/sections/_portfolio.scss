@@ -40,6 +40,10 @@
 
         &-title {
             font-size: 1.4rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
 
         &-tech {
