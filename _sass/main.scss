@@ -1,17 +1,24 @@
-@import 'mixins';
-@import 'functions';
-@import 'vendors/reset';
-@import 'vendors/line-awesome';
-@import 'fonts';
-@import 'variables';
-@import 'base';
-@import 'grid';
-@import 'section';
-@import 'navbar';
-@import 'footer';
-@import 'button';
-@import 'helpers';
-@import 'keyframes';
-@import 'sections/about';
-@import 'sections/portfolio';
-@import 'sections/contact';
+body {
+    background-color: #0c0c0c;
+    font-family: "Fira Code", "Cascadia Code", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    color: #fff;
+    padding: 15px;
+}
+
+.blink {
+    animation: blink 1s linear infinite;
+}
+
+ @keyframes blink {
+     0% {
+         opacity: 1;
+     }
+
+     50% {
+         opacity: 0;
+     }
+
+     100% {
+         opacity: 1;
+     }
+ }
