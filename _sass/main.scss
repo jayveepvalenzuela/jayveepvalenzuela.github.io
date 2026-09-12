@@ -1,24 +1,176 @@
+@import "base";
+
+/**
+ * @license
+ *
+ * Font Family: Satoshi
+ * Designed by: Deni Anggara
+ * URL: https://www.fontshare.com/fonts/satoshi
+ * © 2026 Indian Type Foundry
+ *
+ * Satoshi Variable (Variable font)
+ * Satoshi VariableItalic (Variable font)
+ *
+ */
+@font-face {
+  font-family: "Satoshi-Variable";
+  src:
+    url("../fonts/Satoshi-Variable.woff2") format("woff2"),
+    url("../fonts/Satoshi-Variable.woff") format("woff"),
+    url("../fonts/Satoshi-Variable.ttf") format("truetype");
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+/**
+ * @license
+ *
+ * Font Family: General Sans
+ * Designed by: Frode Helland
+ * URL: https://www.fontshare.com/fonts/general-sans
+ * © 2026 Indian Type Foundry
+ *
+ * General Sans Variable (Variable font)
+ *
+ */
+@font-face {
+  font-family: "GeneralSans-Variable";
+  src:
+    url("../fonts/GeneralSans-Variable.woff2") format("woff2"),
+    url("../fonts/GeneralSans-Variable.woff") format("woff"),
+    url("../fonts/GeneralSans-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+:root {
+  --background: #0b0b0c;
+  --text-primary: #F5F5F5;
+  --text-secondary: #8A93A3;
+  --accent: #6FA8DC;
+  --font-body: "Satoshi-Variable", sans-serif;
+  --font-heading: "GeneralSans-Variable", sans-serif;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
 body {
-    background-color: #0c0c0c;
-    font-family: "Fira Code", "Cascadia Code", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    color: #fff;
-    padding: 15px;
+  background-color: var(--background);
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  min-height: 100%;
+  font-size: clamp(1.2rem, 0.986rem + 0.571vw, 1.5rem);
 }
 
-.blink {
-    animation: blink 1s linear infinite;
+h1 {
+  font-size: clamp(2rem, 1.286rem + 1.905vw, 3rem);
+  margin-bottom: clamp(2rem, 1.286rem + 1.905vw, 3rem);
 }
 
- @keyframes blink {
-     0% {
-         opacity: 1;
-     }
+p {
+  margin-bottom: clamp(1.2rem, 0.986rem + 0.571vw, 1.5rem);
+}
 
-     50% {
-         opacity: 0;
-     }
+a {
+  color: var(--accent);
+  font-weight: 500;
+}
 
-     100% {
-         opacity: 1;
-     }
- }
+.heading {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.intro {
+  min-height: 100dvh;
+  position: relative;
+}
+
+.intro-text {
+  margin-bottom: clamp(2rem, 1.286rem + 1.905vw, 3rem);
+}
+
+.intro-links {
+  gap: 2rem;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.transition {
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+.opacity-hover {
+  transition-property: opacity;
+}
+
+.opacity-hover:hover {
+  opacity: 75%;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .intro-links {
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .intro-text {
+    max-width: 65ch;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .transition {
+    transition: none;
+  }
+}
