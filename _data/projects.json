@@ -1,26 +1,13 @@
 [
-    {
-        "name": "covid19-philippines ",
-        "description": "A simple coronavirus tracker app for Philippines.",
-        "thumbnail": "project-covid-19-tracker-philippines.webp",
-        "url": "https://covid19-philippines.netlify.app/",
-        "repo": "https://github.com/jayveepvalenzuela/covid19-philippines",
-        "tech": ["Pug", "Sass", "JavaScript", "Gulp"]
+  {
+    "name": "Pokémon Next",
+    "description": "Your comprehensive Pokédex featuring detailed information on Pokémon from Kanto region through Paldea.",
+    "preview": {
+      "video": "sample-1280x720.webm",
+      "fallback": "https://placehold.co/1280x720"
     },
-    {
-        "name": "jayveepvalenzuela.github.io",
-        "description": "My portfolio website built with Jekyll. Animations are handled with GSAP and CSS.",
-        "thumbnail": "project-jayveepvalenzuela-github-io.webp",
-        "url": "https://jayveepvalenzuela.github.io/",
-        "repo": "https://github.com/jayveepvalenzuela/jayveepvalenzuela.github.io",
-        "tech": ["Jekyll", "HTML", "Sass", "JavaScript", "GSAP"]
-    },
-    {
-        "name": "pokedex",
-        "description": "Pokédex app built with React.",
-        "thumbnail": "project-pokedex.webp",
-        "url": "https://pokedex-yellow.vercel.app/",
-        "repo": "https://github.com/jayveepvalenzuela/pokedex",
-        "tech": ["React", "TailwindCSS", "PokéAPI"]
-    }
+    "url": "https://pokemon-next-web.vercel.app/",
+    "repo": "",
+    "tech": ["Next.js", "React", "Tailwind", "PokéAPI"]
+  }
 ]

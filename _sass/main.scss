@@ -114,7 +114,6 @@ a {
 
 .intro {
   min-height: 100dvh;
-  position: relative;
 
   &-text {
     margin-bottom: clamp(2rem, 1.286rem + 1.905vw, 3rem);
@@ -132,16 +131,16 @@ a {
 .experience {
   &-timeline {
     > li {
+      padding-top: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+      padding-bottom: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
       &:not(:last-child) {
         border-bottom: 1px solid var(--border-color);
-        padding-bottom: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
-        margin-bottom: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
       }
     }
 
     &-grid {
       @media (min-width: 992px) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 75%;
       }
     }
   }
@@ -161,8 +160,6 @@ a {
   }
 
   &-company-timeline {
-    position: relative;
-
     &::before {
       content: "";
       position: absolute;
@@ -190,6 +187,39 @@ a {
   }
 }
 
+.works {
+  video {
+    border-radius: 4px;
+    margin-bottom: clamp(1.2rem, 0.986rem + 0.571vw, 1.5rem);
+  }
+
+  &-title {
+    a {
+      gap: 0.75rem;
+
+      @media (min-width: 992px) {
+        &:hover {
+          svg {
+            transition-property: transform;
+            transform: translate(2px, -2px);
+          }
+        }
+      }
+    }
+  }
+
+  &-tech {
+    gap: 1rem;
+    font-size: 0.75rem;
+
+    li {
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+  }
+}
+
 .container {
   width: 100%;
   margin-left: auto;
@@ -208,6 +238,19 @@ a {
   @media (min-width: 992px) {
     max-width: 960px;
   }
+}
+
+.inset {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.relative {
+  position: relative;
 }
 
 .flex {
