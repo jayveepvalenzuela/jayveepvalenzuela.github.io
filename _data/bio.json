@@ -1,0 +1,64 @@
+{
+  "experience": [
+    {
+      "date": ["2021-05", "Present"],
+      "company": "KMC Solutions",
+      "position": ["Frontend Developer"],
+      "description": "Built custom extensions and templates for BigCommerce and Shopify client projects."
+    },
+    {
+      "date": ["2020-01", "2021-03"],
+      "company": "Mpotech Digital System, Inc.",
+      "position": ["Web Developer"],
+      "description": "Developed and maintained websites primarily for online betting platforms."
+    },
+    {
+      "date": ["2019-06", "2019-10"],
+      "company": "PLDT Global Corporation",
+      "position": ["Frontend Developer"],
+      "description": "Built a web app for a telecom company where consumers can avail data packages while traveling abroad."
+    },
+    {
+      "date": ["2017-04", "2019-04"],
+      "company": "Penbrothers",
+      "position": ["Senior Frontend Developer", "Frontend Developer"],
+      "description": "Led the frontend team at a digital marketing agency, collaborating with designers and product managers to ensure sites were production-ready and optimized."
+    },
+    {
+      "date": ["2016-09", "2017-04"],
+      "company": "Freelance",
+      "position": ["Web Developer"],
+      "description": "Revamped and maintained a Joomla website for an accelerated learning center."
+    },
+    {
+      "date": ["2014-07", "2016-07"],
+      "company": "Network Economic Service Ventures Philippines, Inc.",
+      "position": ["Software Developer", "Graphic and Web Designer"],
+      "description": "Developed several projects including a Zen Cart ecommerce store, handled multiple publishing sites powered by Radiant CMS, and a sales quote mobile app for a well-known furniture store in the Philippines."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Pokémon Next",
+      "description": "Your comprehensive Pokédex featuring detailed information on Pokémon from Kanto region through Paldea.",
+      "preview": {
+        "video": "sample-1280x720.webm",
+        "fallback": "https://placehold.co/1280x720"
+      },
+      "url": "https://pokemon-next-web.vercel.app/",
+      "repo": "",
+      "tech": ["Next.js", "React", "Tailwind", "PokéAPI"]
+    },
+    {
+      "name": "COVID-19 Tracker",
+      "description": "A lightweight COVID-19 tracker web app.",
+      "preview": {
+        "video": "sample-1280x720.webm",
+        "fallback": "https://placehold.co/1280x720"
+      },
+      "url": "https://covid19-philippines.netlify.app/",
+      "repo": "",
+      "tech": ["Pug", "Sass", "JavaScript", "Gulp"]
+    }
+  ]
+}

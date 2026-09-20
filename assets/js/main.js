@@ -1,36 +1,37 @@
 (() => {
   document.documentElement.classList.replace("no-js", "js");
 
-  initLenisScroll();
+  initSmoothScroll();
 })();
 
-function initLenisScroll() {
-  gsap.registerPlugin(ScrollTrigger);
+function initSmoothScroll() {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - 2 ** (-10 * t)),
-    orientation: "vertical",
-    gestureOrientation: "vertical",
-    smoothWheel: true,
-    wheelMultiplier: 1,
-    syncTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
-    autoResize: true,
+  ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1.2,
   });
 
-  lenis.on("scroll", ScrollTrigger.update);
-
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-
-  gsap.ticker.lagSmoothing(0);
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".works",
+        start: "bottom bottom",
+        end: () => `+=${window.innerHeight}`,
+        scrub: true,
+        pin: ".contact",
+      },
+    })
+    .to(".works", { y: "-100vh", ease: "none" }, 0);
 
   const progressBar = document.querySelector(".scroll-progress");
 
-  lenis.on("scroll", ({ progress }) => {
-    progressBar.style.transform = `scaleX(${progress})`;
+  ScrollTrigger.create({
+    start: 0,
+    end: "max",
+    onUpdate: (self) => {
+      progressBar.style.transform = `scaleX(${self.progress})`;
+    },
   });
 }

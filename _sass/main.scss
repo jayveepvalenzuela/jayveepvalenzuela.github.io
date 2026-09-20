@@ -1,5 +1,4 @@
 @import "base";
-@import "lenis";
 
 /**
  * @license
@@ -79,6 +78,11 @@ body {
   min-height: 100%;
 }
 
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: clamp(3rem, 2.286rem + 1.905vw, 4rem);
+}
+
 h3 {
   font-size: 1.2rem;
   margin-bottom: 0.50rem;
@@ -113,7 +117,9 @@ a {
 }
 
 .intro {
+  background-color: var(--background);
   min-height: 100dvh;
+  z-index: 20;
 
   &-text {
     margin-bottom: clamp(2rem, 1.286rem + 1.905vw, 3rem);
@@ -129,18 +135,22 @@ a {
 }
 
 .experience {
+  background-color: var(--background);
+  z-index: 20;
+
   &-timeline {
     > li {
       padding-top: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
-      padding-bottom: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+
       &:not(:last-child) {
+        padding-bottom: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
         border-bottom: 1px solid var(--border-color);
       }
     }
 
     &-grid {
       @media (min-width: 992px) {
-        grid-template-columns: 1fr 75%;
+        grid-template-columns: 25% 1fr;
       }
     }
   }
@@ -151,7 +161,7 @@ a {
     margin-bottom: 0.50rem;
     text-transform: uppercase;
     font-weight: 700;
-    color: color-mix(in srgb, var(--text-primary) 52%, #000);
+    color: color-mix(in srgb, var(--text-primary) 52%, var(--background));
 
     @media (min-width: 992px) {
       padding-top: 2px;
@@ -167,7 +177,7 @@ a {
       left: 4px;
       bottom: 10px;
       width: 1px;
-      background-color: color-mix(in srgb, var(--text-primary) 35%, #000);
+      background-color: color-mix(in srgb, var(--text-primary) 35%, var(--background));
     }
 
     li {
@@ -178,38 +188,59 @@ a {
         content: "";
         width: 9px;
         height: 9px;
-        background-color: color-mix(in srgb, var(--text-primary) 35%, #000);
+        background-color: color-mix(in srgb, var(--text-primary) 35%, var(--background));
         display: inline-block;
         border-radius: 50%;
-        z-index: 10;
+        z-index: 5;
       }
     }
   }
 }
 
 .works {
-  video {
-    border-radius: 4px;
-    margin-bottom: clamp(1.2rem, 0.986rem + 0.571vw, 1.5rem);
+  background-color: color-mix(in srgb, var(--background) 96%, var(--text-primary));
+  z-index: 20;
+  margin-bottom: -100svh;
+
+  &-list {
+    padding-top: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+
+    > li:not(:last-child) {
+      margin-bottom: clamp(3rem, 2.286rem + 1.905vw, 4rem);
+    }
+  }
+
+  &-card {
+    background-color: color-mix(in srgb, var(--background) 90%, var(--text-primary));
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
   }
 
   &-title {
+    padding: clamp(2rem, 1.643rem + 0.952vw, 2.5rem) clamp(1rem, 0.286rem + 1.905vw, 2rem) clamp(1rem, 0.286rem + 1.905vw, 2rem);
+
     a {
       gap: 0.75rem;
+      color: var(--text-primary);
+      justify-content: space-between;
 
       @media (min-width: 992px) {
         &:hover {
           svg {
             transition-property: transform;
-            transform: translate(2px, -2px);
+            transform: translate(4px, -4px);
           }
         }
       }
     }
   }
 
+  &-detail {
+    padding: clamp(1rem, 0.286rem + 1.905vw, 2rem) clamp(1rem, 0.286rem + 1.905vw, 2rem) clamp(2rem, 1.643rem + 0.952vw, 2.5rem);
+  }
+
   &-tech {
-    gap: 1rem;
+    gap: clamp(1rem, 0.643rem + 0.952vw, 1.5rem);
     font-size: 0.75rem;
 
     li {
@@ -218,6 +249,11 @@ a {
       color: var(--text-primary);
     }
   }
+}
+
+.contact {
+  height: 100svh;
+  z-index: 10;
 }
 
 .container {
@@ -287,8 +323,8 @@ a {
 }
 
 .is-large {
-  padding-top: 12rem;
-  padding-bottom: 12rem;
+  padding-top: clamp(8rem, 5.143rem + 7.619vw, 12rem);
+  padding-bottom: clamp(8rem, 5.143rem + 7.619vw, 12rem);
 }
 
 .sr-only {
