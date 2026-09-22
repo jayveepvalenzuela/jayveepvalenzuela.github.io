@@ -21,7 +21,7 @@
 title: Jayvee Valenzuela | Front-End Web Developer
 email: jayveevalenzuela@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Jayvee Valenzuela is a web developer based in Manila, Philippines with 5+ years of experience focusing on web development.
+  Jayvee Valenzuela is a web developer based in Manila, Philippines with 5+ years of experience focused on creating responsive, user-friendly web applications.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://jayveepvalenzuela.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jayveepvalenzuela
@@ -30,7 +30,7 @@ links:
   linkedin: "https://linkedin.com/in/jayveepvalenzuela"
   github: "https://github.com/jayveepvalenzuela"
   codepen: "https://codepen.io/jayveepvalenzuela"
-theme_color: "#0B0B0C"
+theme_color: "#111111"
 
 # Build settings
 theme: minima

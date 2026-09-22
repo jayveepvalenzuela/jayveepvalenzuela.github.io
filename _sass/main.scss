@@ -53,6 +53,9 @@
   --border-color: #2A2A2A;
   --font-body: "Satoshi-Variable", sans-serif;
   --font-heading: "GeneralSans-Variable", sans-serif;
+  --space-sm: clamp(1rem, 0.286rem + 1.905vw, 2rem);
+  --space-md: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+  --space-lg: clamp(2rem, 1.643rem + 0.952vw, 2.5rem);
 }
 
 ::selection {
@@ -78,16 +81,6 @@ body {
   min-height: 100%;
 }
 
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: clamp(3rem, 2.286rem + 1.905vw, 4rem);
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.50rem;
-}
-
 p {
   margin-bottom: clamp(1.2rem, 0.986rem + 0.571vw, 1.5rem);
 }
@@ -111,18 +104,75 @@ a {
 
 .heading {
   font-family: var(--font-heading);
-  color: var(--text-primary);
   font-weight: 500;
   line-height: 1.4;
 }
 
-.intro {
+%stacked-section {
   background-color: var(--background);
-  min-height: 100dvh;
   z-index: 20;
+}
+
+%vector-decoration {
+  position: absolute;
+  right: -15%;
+  pointer-events: none;
+  opacity: 35%;
+  width: 75%;
+
+  @media (min-width: 768px) {
+    width: 60%;
+    right: 5%;
+  }
+
+  @media (min-width: 992px) {
+    width: 40%;
+  }
+
+  svg {
+    width: 100%;
+  }
+}
+
+%full-wrap {
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+.section {
+  &-title {
+    font-size: clamp(0.9rem, 0.829rem + 0.19vw, 1rem);
+    text-transform: uppercase;
+  }
+
+  &-sub-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.intro {
+  @extend %stacked-section;
+  height: 100vh;
+  overflow: hidden;
+
+  &-container {
+    z-index: 10;
+    text-shadow: 2px 2px 0px var(--background);
+  }
+
+  &-heading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 
   &-text {
-    margin-bottom: clamp(2rem, 1.286rem + 1.905vw, 3rem);
+    font-size: clamp(1.1rem, 1.029rem + 0.19vw, 1.2rem);
+    margin-bottom: 2.4rem;
+
+    @media (min-width: 992px) {
+      width: 50%;
+    }
   }
 
   &-links {
@@ -132,18 +182,26 @@ a {
       gap: 3rem;
     }
   }
+
+  &-vector {
+    @extend %vector-decoration;
+    top: -10%;
+  }
+
+  .container {
+    @extend %full-wrap;
+  }
 }
 
 .experience {
-  background-color: var(--background);
-  z-index: 20;
+  @extend %stacked-section;
 
   &-timeline {
     > li {
-      padding-top: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+      padding-top: var(--space-md);
 
       &:not(:last-child) {
-        padding-bottom: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+        padding-bottom: var(--space-md);
         border-bottom: 1px solid var(--border-color);
       }
     }
@@ -152,6 +210,11 @@ a {
       @media (min-width: 992px) {
         grid-template-columns: 25% 1fr;
       }
+    }
+
+     &-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.50rem;
     }
   }
 
@@ -170,6 +233,8 @@ a {
   }
 
   &-company-timeline {
+    --timeline-indicator: color-mix(in srgb, var(--text-primary) 35%, var(--background));
+
     &::before {
       content: "";
       position: absolute;
@@ -177,7 +242,7 @@ a {
       left: 4px;
       bottom: 10px;
       width: 1px;
-      background-color: color-mix(in srgb, var(--text-primary) 35%, var(--background));
+      background-color: var(--timeline-indicator);
     }
 
     li {
@@ -188,7 +253,7 @@ a {
         content: "";
         width: 9px;
         height: 9px;
-        background-color: color-mix(in srgb, var(--text-primary) 35%, var(--background));
+        background-color: var(--timeline-indicator);
         display: inline-block;
         border-radius: 50%;
         z-index: 5;
@@ -203,7 +268,7 @@ a {
   margin-bottom: -100svh;
 
   &-list {
-    padding-top: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+    padding-top: var(--space-md);
 
     > li:not(:last-child) {
       margin-bottom: clamp(3rem, 2.286rem + 1.905vw, 4rem);
@@ -217,7 +282,8 @@ a {
   }
 
   &-title {
-    padding: clamp(2rem, 1.643rem + 0.952vw, 2.5rem) clamp(1rem, 0.286rem + 1.905vw, 2rem) clamp(1rem, 0.286rem + 1.905vw, 2rem);
+    padding: var(--space-lg) var(--space-sm) var(--space-sm);
+    font-size: 1.2rem;
 
     a {
       gap: 0.75rem;
@@ -236,7 +302,7 @@ a {
   }
 
   &-detail {
-    padding: clamp(1rem, 0.286rem + 1.905vw, 2rem) clamp(1rem, 0.286rem + 1.905vw, 2rem) clamp(2rem, 1.643rem + 0.952vw, 2.5rem);
+    padding: var(--space-sm) var(--space-sm) var(--space-lg);
   }
 
   &-tech {
@@ -249,11 +315,44 @@ a {
       color: var(--text-primary);
     }
   }
+
+  &-more {
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 4rem auto auto;
+    width: fit-content;
+    gap: 0.50rem;
+  }
 }
 
 .contact {
-  height: 100svh;
+  height: 100vh;
   z-index: 10;
+  overflow: hidden;
+
+  &-links {
+    flex-direction: column;
+    gap: clamp(1.4rem, 0.686rem + 1.905vw, 2.4rem);
+    padding-top: var(--space-md);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    a {
+      font-size: 1.2rem;
+    }
+  }
+
+  &-vector {
+    @extend %vector-decoration;
+    bottom: -60%;
+  }
+
+  .container {
+    @extend %full-wrap;
+  }
 }
 
 .container {
@@ -338,4 +437,8 @@ a {
 
 .text-accent {
   color: var(--accent);
+}
+
+.text-primary {
+  color: var(--text-primary);
 }
