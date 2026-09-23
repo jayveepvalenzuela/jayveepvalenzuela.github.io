@@ -46,16 +46,30 @@
 }
 
 :root {
+  --font-body: "Satoshi-Variable", sans-serif;
+  --font-heading: "GeneralSans-Variable", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --space-sm: clamp(1rem, 0.286rem + 1.905vw, 2rem);
+  --space-md: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
+  --space-lg: clamp(2rem, 1.643rem + 0.952vw, 2.5rem);
+}
+
+:root[data-theme="dark"] {
   --background: #111;
   --text-primary: #F2F2F2;
   --text-secondary: #929AA2;
   --accent: #FF6469;
   --border-color: #2A2A2A;
-  --font-body: "Satoshi-Variable", sans-serif;
-  --font-heading: "GeneralSans-Variable", sans-serif;
-  --space-sm: clamp(1rem, 0.286rem + 1.905vw, 2rem);
-  --space-md: clamp(1.5rem, 1.143rem + 0.952vw, 2rem);
-  --space-lg: clamp(2rem, 1.643rem + 0.952vw, 2.5rem);
+}
+
+:root[data-theme="light"] {
+  --background: #f8eee4;
+  --text-primary: #16191d;
+  --text-secondary: #555b61;
+  --accent: #ff4334;
+  --border-color: #dcccbc;
 }
 
 ::selection {
@@ -77,7 +91,7 @@ body {
   background-color: var(--background);
   color: var(--text-secondary);
   font-family: var(--font-body);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   min-height: 100%;
 }
 
@@ -87,7 +101,7 @@ p {
 
 a {
   color: var(--accent);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .scroll-progress {
@@ -102,9 +116,29 @@ a {
   transform-origin: left;
 }
 
+.theme-toggle {
+  display: grid;
+
+  .theme-toggle-icon {
+    grid-area: 1 / 1;
+  }
+
+  .theme-toggle-icon--sun {
+    display: none;
+  }
+
+  :root[data-theme="light"] & .theme-toggle-icon--moon {
+    display: none;
+  }
+
+  :root[data-theme="light"] & .theme-toggle-icon--sun {
+    display: block;
+  }
+}
+
 .heading {
   font-family: var(--font-heading);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1.4;
 }
 
@@ -122,7 +156,7 @@ a {
 
   @media (min-width: 768px) {
     width: 60%;
-    right: 5%;
+    right: 1.5rem;
   }
 
   @media (min-width: 992px) {
@@ -159,6 +193,10 @@ a {
   &-container {
     z-index: 10;
     text-shadow: 2px 2px 0px var(--background);
+
+    @media (min-width: 992px) {
+      width: 50%;
+    }
   }
 
   &-heading {
@@ -169,10 +207,6 @@ a {
   &-text {
     font-size: clamp(1.1rem, 1.029rem + 0.19vw, 1.2rem);
     margin-bottom: 2.4rem;
-
-    @media (min-width: 992px) {
-      width: 50%;
-    }
   }
 
   &-links {
@@ -185,7 +219,11 @@ a {
 
   &-vector {
     @extend %vector-decoration;
-    top: -10%;
+    top: -8%;
+
+    @media (min-width: 992px) {
+      top: -25%;
+    }
   }
 
   .container {
@@ -223,7 +261,7 @@ a {
     display: block;
     margin-bottom: 0.50rem;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
     color: color-mix(in srgb, var(--text-primary) 52%, var(--background));
 
     @media (min-width: 992px) {
@@ -276,7 +314,7 @@ a {
   }
 
   &-card {
-    background-color: color-mix(in srgb, var(--background) 90%, var(--text-primary));
+    background-color: color-mix(in srgb, var(--background) 88%, var(--text-primary));
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
   }
@@ -311,7 +349,7 @@ a {
 
     li {
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
       color: var(--text-primary);
     }
   }
@@ -441,4 +479,16 @@ a {
 
 .text-primary {
   color: var(--text-primary);
+}
+
+.fixed-top {
+  position: fixed;
+  top: 1.5rem;
+  left: 0;
+  right: 0;
+  z-index: 50;
+
+  .container {
+    justify-content: end
+  }
 }
