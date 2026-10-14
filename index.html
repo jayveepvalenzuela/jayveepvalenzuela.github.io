@@ -2,8 +2,157 @@
 layout: default
 ---
 
-{% include sections/about.html %}
+<section class="intro relative flex items-center" aria-labelledby="intro-heading">
+  <div class="container intro-container">
+    <div class="intro-image-container relative" aria-hidden="true">
+      <div class="intro-image relative"></div>
+      <div class="sleeping-cat">
+        <span class="zzz" style="--i: 0">z</span>
+        <span class="zzz" style="--i: 1">z</span>
+        <span class="zzz" style="--i: 2">Z</span>
+        <img src="{{ "/assets/img/lazy-cat.svg" | relative_url }}" alt="" width="2760" height="1480" decoding="async">
+      </div>
+    </div>
+    <div class="intro-text-container">
+      {% assign first_name = site.author | split: " " | first %}
+      <h1 id="intro-heading" class="heading text-primary intro-heading">Hello, I'm <span class="text-accent">{{ first_name }}</span><span class="sr-only">{{ site.author | remove_first: first_name }}</span>.</h1>
+      <div class="intro-text">
+        <p>
+          I'm a web developer with 5+ years of experience based in Manila, Philippines. Currently focused on creating responsive, user-friendly web applications. I enjoy turning ideas and designs into functional digital experiences.
+        </p>
+        <p class="mb-0">In my spare time, I play video games and learn music.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-{% include sections/portfolio.html %}
+<div class="is-large" aria-hidden="true"></div>
 
-{% include sections/contact.html %}
+<section class="experience is-large relative" aria-labelledby="experience-heading">
+  <div class="container">
+    <h2 id="experience-heading" class="heading text-accent text-uppercase section-title">Experience</h2>
+    <ul class="experience-timeline section-title-spacer">
+      {% for exp in site.data.bio.experience %}
+      <li>
+        <article class="grid experience-timeline-grid">
+          <p class="time text-uppercase">
+            <time datetime="{{ exp.date[0] }}">{{ exp.date[0] | append: "-01" | date: "%b %Y" }}</time> -
+            {% if exp.date[1] == "Present" %}Present{% else %}<time datetime="{{ exp.date[1] }}">{{ exp.date[1] | append: "-01" | date: "%b %Y" }}</time>{% endif %}
+          </p>
+          <div>
+            {% if exp.position.size > 1 %}
+            <h3 class="heading experience-timeline-title text-primary">{{ exp.company }}</h3>
+            <ul class="experience-company-timeline relative">
+              {% for pos in exp.position %}
+              <li class="flex items-center">{{ pos }}</li>
+              {% endfor %}
+            </ul>
+            {% else %}
+            <h3 class="heading experience-timeline-title text-primary">
+              <span>{{ exp.position[0] }}</span>
+              <span class="sr-only"> at </span>
+              <span aria-hidden="true" class="spacer"> · </span>
+              <span>{{ exp.company }}</span>
+            </h3>
+            {% endif %}
+            <p class="mb-0">{{ exp.description }}</p>
+          </div>
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="works is-large relative" aria-roledescription="carousel" aria-labelledby="works-heading">
+  <div class="container">
+    <h2 id="works-heading" class="heading text-accent text-uppercase section-title">Personal Projects</h2>
+  </div>
+  <div class="carousel-viewport section-title-spacer">
+    <div class="container">
+      <ul id="carousel-track" class="carousel-track flex relative">
+        {% for project in site.data.bio.projects %}
+        <li class="carousel-slide flex" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ forloop.length }}">
+          <article class="relative works-card">
+            <h3 class="works-title mb-0">
+              <a class="flex items-center justify-between text-primary" href="{{ project.url }}" target="_blank" rel="noreferrer noopener">
+                <span class="inset" aria-hidden="true"></span>
+                <span class="heading transition">{{ project.name }}</span>
+                <span class="sr-only"> (opens in a new tab)</span>
+                <svg class="text-accent transition" xmlns="http://www.w3.org/2000/svg" width="0.75em" height="0.75em" viewBox="2.293 2 11.707 11.707" aria-hidden="true"><path fill="currentColor" d="M10.586 4H4V2h10v10h-2V5.414l-8.293 8.293l-1.414-1.414z"/></svg>
+              </a>
+            </h3>
+            <div class="works-preview">
+              {% assign preview = project.preview | split: "." | first %}
+              <picture>
+                <source type="image/avif" srcset="/assets/img/{{ preview }}.avif">
+                <source type="image/webp" srcset="/assets/img/{{ preview }}.webp">
+                <img class="transition" src="/assets/img/{{ preview }}.webp" alt="Preview of {{ project.name }}" width="1920" height="{{ project.previewHeight }}" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="works-detail">
+              <ul class="works-categories flex text-uppercase">
+                {% for category in project.categories %}
+                  <li>{{ category }}</li>
+                {% endfor %}
+              </ul>
+              <p>{{ project.description }}</p>
+              <ul class="works-tech flex text-primary text-uppercase">
+                {% for tech in project.tech %}
+                  <li>{{ tech }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </article>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container flex items-center justify-between">
+    <div class="carousel-controls flex">
+      <button type="button" class="carousel-btn grid transition text-primary" data-dir="-1" aria-label="Previous project" aria-controls="carousel-track">
+        <svg xmlns="http://www.w3.org/2000/svg" width="0.617em" height="0.90em" viewBox="8 6 7.4 12" aria-hidden="true" focusable="false"><path fill="currentColor" d="m14 18l-6-6l6-6l1.4 1.4l-4.6 4.6l4.6 4.6z"/></svg>
+      </button>
+      <button type="button" class="carousel-btn grid transition text-primary" data-dir="1" aria-label="Next project" aria-controls="carousel-track">
+        <svg xmlns="http://www.w3.org/2000/svg" width="0.617em" height="0.90em" viewBox="8 6 7.4 12" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.6 12L8 7.4L9.4 6l6 6l-6 6L8 16.6z"/></svg>
+      </button>
+    </div>
+    <a href="{{ site.links.github }}?tab=repositories" class="flex items-center more-projects relative transition opacity-hover text-accent" target="_blank" rel="noopener noreferrer">
+      View more projects<span class="sr-only"> on GitHub (opens in a new tab)</span>
+    </a>
+  </div>
+</section>
+
+<section id="contact" class="contact relative flex items-center" aria-labelledby="contact-heading">
+  <div class="container relative flex items-center">
+    <div class="contact-container">
+      <h2 id="contact-heading" class="heading text-accent text-uppercase section-title">Get In Touch</h2>
+      <p class="heading section-sub-title text-primary section-title-spacer">Have an opportunity to discuss?<br class="br-lg"> I'd love to hear from you</p>
+      <div class="contact-bottom flex justify-between">
+        <nav class="contact-links" aria-label="Contact links">
+          <ul class="grid">
+            {% for link in site.links %}
+            <li>
+              <a href="{{ link[1] }}" class="flex items-center transition opacity-hover" target="_blank" rel="noopener noreferrer">
+              {% case link[0] %}
+                {% when 'linkedin' %}LinkedIn
+                {% when 'github' %}GitHub
+                {% when 'codepen' %}CodePen
+              {% endcase %}
+              <span class="sr-only"> (opens in a new tab)</span>
+              </a>
+            </li>
+            {% endfor %}
+            <li>
+              <a href="mailto:{{ site.email }}" class="flex items-center transition opacity-hover">Email</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="version text-uppercase" aria-hidden="true">
+          <span>Version {{ site.version }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

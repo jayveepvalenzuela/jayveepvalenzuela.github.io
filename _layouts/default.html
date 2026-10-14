@@ -3,59 +3,55 @@ layout: compress
 ---
 
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="{{ site.description }}">
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
 
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="{{ site.url }}">
-        <meta property="og:title" content="{{ site.title }}">
-        <meta property="og:description" content="{{ site.description }}">
-        <meta property="og:image" content="{{ site.url }}/assets/img/og-image.png">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}">
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta property="og:image" content="{{ site.url }}/assets/img/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:url" content="{{ site.url }}">
-        <meta name="twitter:title" content="{{ site.title }}">
-        <meta name="twitter:description" content="{{ site.description }}">
-        <meta name="twitter:image" content="{{ site.url }}/assets/img/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ site.url }}">
+    <meta name="twitter:title" content="{{ site.title }}">
+    <meta name="twitter:description" content="{{ site.description }}">
+    <meta name="twitter:image" content="{{ site.url }}/assets/img/og-image.png">
 
-        <title>{{ site.title }}</title>
+    <title>{{ site.title }}</title>
 
-        <meta name="theme-color" content="{{ site.theme_color }}">
-        <meta name="msapplication-TileColor" content="{{ site.theme_color }}">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/site.webmanifest">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{ site.theme_color }}">
+    <meta name="theme-color" content="{{ site.theme_color }}">
+    <meta name="msapplication-TileColor" content="{{ site.theme_color }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="{{ site.theme_color }}">
 
-        <link rel="stylesheet" href="/assets/css/styles.css">
-        <link rel="canonical" href="{{ site.url }}">
-
-        <script>
-            window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-            ga('create', 'UA-163947566-2', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <script async src="https://www.google-analytics.com/analytics.js"></script>
-    </head>
-    <body data-theme="0">
-        <main>
-            {% include navbar.html %}
-
-            {{ content }}
-
-            {% include footer.html %}
+    <link rel="preload" href="/assets/fonts/CabinetGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="canonical" href="{{ site.url }}">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main id="main">
+          {{ content }}
         </main>
+      </div>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js" integrity="sha512-Kef5sc7gfTacR7TZKelcrRs15ipf7+t+n7Zh6mKNJbmW+/RRdCW9nwfLn4YX0s2nO6Kv5Y2ChqgIakaC6PW09A==" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js" integrity="sha512-nTHzMQK7lwWt8nL4KF6DhwLHluv6dVq/hNnj2PBN0xMl2KaMm1PM02csx57mmToPAodHmPsipoERRNn4pG7f+Q==" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA==" crossorigin="anonymous"></script>
-        <script src="/assets/js/main.js"></script>
-    </body>
+    <script src="/assets/js/gsap.3.15.0.min.js" defer></script>
+    <script src="/assets/js/gsap.3.15.0.scrolltrigger.min.js" defer></script>
+    <script src="/assets/js/gsap.3.15.0.scrollsmoother.min.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
+  </body>
 </html>
