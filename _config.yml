@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Jayvee Valenzuela | Front-End Web Developer
+title: Jayvee Valenzuela | Web Developer
 email: jayveevalenzuela@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   Jayvee Valenzuela is a web developer based in Manila, Philippines with 5+ years of experience focused on creating responsive, user-friendly web applications.
@@ -31,11 +31,15 @@ links:
   github: "https://github.com/jayveepvalenzuela"
   codepen: "https://codepen.io/jayveepvalenzuela"
 theme_color: "#111111"
+version: "2.0.0"
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+
+sass:
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default.

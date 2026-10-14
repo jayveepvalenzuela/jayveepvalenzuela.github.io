@@ -41,24 +41,22 @@
     {
       "name": "Pokémon Next",
       "description": "Your comprehensive Pokédex featuring detailed information on Pokémon from Kanto region through Paldea.",
-      "preview": {
-        "video": "sample-1280x720.webm",
-        "fallback": "https://placehold.co/1280x720"
-      },
+      "preview": "pokemon-next-preview.webp",
+      "previewHeight": 4825,
       "url": "https://pokemon-next-web.vercel.app/",
       "repo": "",
-      "tech": ["Next.js", "React", "Tailwind", "PokéAPI"]
+      "tech": ["Next.js", "React", "Tailwind"],
+      "categories": ["web app"]
     },
     {
-      "name": "COVID-19 Tracker",
-      "description": "A lightweight COVID-19 tracker web app.",
-      "preview": {
-        "video": "sample-1280x720.webm",
-        "fallback": "https://placehold.co/1280x720"
-      },
+      "name": "COVID-19 PH",
+      "description": "Philippines COVID-19 stats and cases tracking report.",
+      "preview": "covid-19-ph-preview.webp",
+      "previewHeight": 4825,
       "url": "https://covid19-philippines.netlify.app/",
       "repo": "",
-      "tech": ["Pug", "Sass", "JavaScript", "Gulp"]
+      "tech": ["Pug", "Sass", "Bootstrap", "JavaScript", "Gulp"],
+      "categories": ["web app"]
     }
   ]
 }

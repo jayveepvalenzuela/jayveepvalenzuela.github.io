@@ -2,81 +2,40 @@
 layout: default
 ---
 
-<section class="intro relative flex items-center">
-  <div class="container relative flex items-center">
-    <div class="intro-container">
-      <h1 class="heading text-primary intro-heading">Hello, I'm <span class="text-accent">{{ site.author | split: " " | first }}</span>.</h1>
+<section class="intro relative flex items-center" aria-labelledby="intro-heading">
+  <div class="container intro-container">
+    <div class="intro-image-container relative" aria-hidden="true">
+      <div class="intro-image relative"></div>
+      <div class="sleeping-cat">
+        <span class="zzz" style="--i: 0">z</span>
+        <span class="zzz" style="--i: 1">z</span>
+        <span class="zzz" style="--i: 2">Z</span>
+        <img src="{{ "/assets/img/lazy-cat.svg" | relative_url }}" alt="" width="2760" height="1480" decoding="async">
+      </div>
+    </div>
+    <div class="intro-text-container">
+      {% assign first_name = site.author | split: " " | first %}
+      <h1 id="intro-heading" class="heading text-primary intro-heading">Hello, I'm <span class="text-accent">{{ first_name }}</span><span class="sr-only">{{ site.author | remove_first: first_name }}</span>.</h1>
       <div class="intro-text">
         <p>
-          I'm a frontend developer based in Manila, Philippines, focused on creating responsive, user-friendly web applications. I enjoy turning
-          ideas and designs into functional digital experiences.
+          I'm a web developer with 5+ years of experience based in Manila, Philippines. Currently focused on creating responsive, user-friendly web applications. I enjoy turning ideas and designs into functional digital experiences.
         </p>
-        <p>In my spare time, I play video games and learn music.</p>
+        <p class="mb-0">In my spare time, I play video games and learn music.</p>
       </div>
-      <nav aria-label="Social links">
-        <ul class="intro-links flex">
-          <li>
-            <a href="{{ site.links.linkedin }}" class="transition opacity-hover" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
-                />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="{{ site.links.github }}" class="transition opacity-hover" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
-                />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="{{ site.links.codepen }}" class="transition opacity-hover" target="_blank" rel="noopener noreferrer" aria-label="CodePen (opens in a new tab)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M12 10.202L9.303 12L12 13.798L14.697 12zm4.5.596L19.197 9L13 4.869v3.596zm3.5.07L18.303 12L20 13.132zm-3.5 2.334L13 15.535v3.596L19.197 15zM11 8.465V4.869L4.803 9L7.5 10.798zM4.803 15L11 19.131v-3.596l-3.5-2.333zm.894-3L4 10.868v2.264zM2 9a1 1 0 0 1 .445-.832l9-6a1 1 0 0 1 1.11 0l9 6A1 1 0 0 1 22 9v6a1 1 0 0 1-.445.832l-9 6a1 1 0 0 1-1.11 0l-9-6A1 1 0 0 1 2 15z"
-                />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:{{ site.email }}" class="transition opacity-hover" aria-label="Email">
-              <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fill="currentColor"
-                  d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z"
-                />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="intro-vector">
-      <svg viewBox="39.309 811.867 591.988 1458.590" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g stroke-linecap="round" fill-rule="nonzero" fill="var(--background)" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke">
-          <path d="M41.309 1888.770L41.309 1888.770L41.309 1825.488Q102.832 1825.488 144.580 1790.332Q186.328 1755.176 186.328 1697.168L186.328 1697.168L186.328 813.867L249.609 813.867L249.609 1697.168Q249.609 1780.664 188.965 1834.717Q128.320 1888.770 41.309 1888.770ZM41.309 2015.332L41.309 2015.332L41.309 1952.051Q155.566 1952.051 234.229 1877.783Q312.891 1803.516 312.891 1697.168L312.891 1697.168L312.891 813.867L376.172 813.867L376.172 1697.168Q376.172 1829.004 279.053 1922.168Q181.934 2015.332 41.309 2015.332ZM41.309 2141.895L41.309 2141.895L41.309 2078.613Q208.301 2078.613 323.877 1966.992Q439.453 1855.371 439.453 1697.168L439.453 1697.168L439.453 813.867L502.734 813.867L502.734 1697.168Q502.734 1817.578 441.650 1919.971Q380.566 2022.363 274.219 2082.129Q167.871 2141.895 41.309 2141.895ZM41.309 2268.457L41.309 2268.457L41.309 2205.176Q149.414 2205.176 246.533 2164.746Q343.652 2124.316 413.525 2056.201Q483.398 1988.086 524.707 1894.043Q566.016 1800 566.016 1697.168L566.016 1697.168L566.016 813.867L629.297 813.867L629.297 1697.168Q629.297 1813.184 583.154 1918.652Q537.012 2024.121 458.350 2101.025Q379.688 2177.930 270.703 2223.193Q161.719 2268.457 41.309 2268.457Z" />
-        </g>
-      </svg>
     </div>
   </div>
 </section>
 
-<section class="experience is-large relative">
+<div class="is-large" aria-hidden="true"></div>
+
+<section class="experience is-large relative" aria-labelledby="experience-heading">
   <div class="container">
-    <h2 class="heading text-accent section-title">Experience</h2>
-    <p class="heading section-sub-title text-primary">My professional journey</p>
-    <ul class="experience-timeline">
+    <h2 id="experience-heading" class="heading text-accent text-uppercase section-title">Experience</h2>
+    <ul class="experience-timeline section-title-spacer">
       {% for exp in site.data.bio.experience %}
       <li>
         <article class="grid experience-timeline-grid">
-          <p class="time">
+          <p class="time text-uppercase">
             <time datetime="{{ exp.date[0] }}">{{ exp.date[0] | append: "-01" | date: "%b %Y" }}</time> -
             {% if exp.date[1] == "Present" %}Present{% else %}<time datetime="{{ exp.date[1] }}">{{ exp.date[1] | append: "-01" | date: "%b %Y" }}</time>{% endif %}
           </p>
@@ -85,21 +44,14 @@ layout: default
             <h3 class="heading experience-timeline-title text-primary">{{ exp.company }}</h3>
             <ul class="experience-company-timeline relative">
               {% for pos in exp.position %}
-              <li class="heading flex items-center">{{ pos }}
-                {% unless forloop.last %}
-                <svg class="text-accent" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="m17 11-5-5-5 5" />
-                  <path d="m17 18-5-5-5 5" />
-                </svg>
-                {% endunless %}
-              </li>
+              <li class="flex items-center">{{ pos }}</li>
               {% endfor %}
             </ul>
             {% else %}
             <h3 class="heading experience-timeline-title text-primary">
               <span>{{ exp.position[0] }}</span>
               <span class="sr-only"> at </span>
-              <span aria-hidden="true"> · </span>
+              <span aria-hidden="true" class="spacer"> · </span>
               <span>{{ exp.company }}</span>
             </h3>
             {% endif %}
@@ -112,69 +64,95 @@ layout: default
   </div>
 </section>
 
-<section class="works is-large relative">
+<section class="works is-large relative" aria-roledescription="carousel" aria-labelledby="works-heading">
   <div class="container">
-    <h2 class="heading text-accent section-title">Portfolio</h2>
-    <p class="heading section-sub-title text-primary">Personal projects I've built</p>
-    <ul class="works-list">
-      {% for project in site.data.bio.projects %}
-      <li>
-        <article class="relative works-card">
-          <h3 class="heading works-title mb-0">
-            <a class="flex items-center" href="{{ project.url }}" target="_blank" rel="noreferrer noopener">
-              <span class="inset" aria-hidden="true"></span>
-              <span>{{ project.name }}</span>
-              <span class="sr-only"> (opens in a new tab)</span>
-              <svg class="text-accent transition" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 20 20 4"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 4h10v10"/></svg>
-            </a>
-          </h3>
-          <video class="transition" src="/assets/img/{{ project.preview.video }}" poster="{{ project.preview.fallback }}" autoplay loop muted playsinline aria-hidden="true"></video>
-          <div class="works-detail">
-            <p>{{ project.description }}</p>
-            <ul class="works-tech flex">
-              {% for tech in project.tech %}
-                <li>{{ tech }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-        </article>
-      </li>
-      {% endfor %}
-    </ul>
+    <h2 id="works-heading" class="heading text-accent text-uppercase section-title">Personal Projects</h2>
+  </div>
+  <div class="carousel-viewport section-title-spacer">
+    <div class="container">
+      <ul id="carousel-track" class="carousel-track flex relative">
+        {% for project in site.data.bio.projects %}
+        <li class="carousel-slide flex" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ forloop.length }}">
+          <article class="relative works-card">
+            <h3 class="works-title mb-0">
+              <a class="flex items-center justify-between text-primary" href="{{ project.url }}" target="_blank" rel="noreferrer noopener">
+                <span class="inset" aria-hidden="true"></span>
+                <span class="heading transition">{{ project.name }}</span>
+                <span class="sr-only"> (opens in a new tab)</span>
+                <svg class="text-accent transition" xmlns="http://www.w3.org/2000/svg" width="0.75em" height="0.75em" viewBox="2.293 2 11.707 11.707" aria-hidden="true"><path fill="currentColor" d="M10.586 4H4V2h10v10h-2V5.414l-8.293 8.293l-1.414-1.414z"/></svg>
+              </a>
+            </h3>
+            <div class="works-preview">
+              {% assign preview = project.preview | split: "." | first %}
+              <picture>
+                <source type="image/avif" srcset="/assets/img/{{ preview }}.avif">
+                <source type="image/webp" srcset="/assets/img/{{ preview }}.webp">
+                <img class="transition" src="/assets/img/{{ preview }}.webp" alt="Preview of {{ project.name }}" width="1920" height="{{ project.previewHeight }}" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="works-detail">
+              <ul class="works-categories flex text-uppercase">
+                {% for category in project.categories %}
+                  <li>{{ category }}</li>
+                {% endfor %}
+              </ul>
+              <p>{{ project.description }}</p>
+              <ul class="works-tech flex text-primary text-uppercase">
+                {% for tech in project.tech %}
+                  <li>{{ tech }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </article>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container flex items-center justify-between">
+    <div class="carousel-controls flex">
+      <button type="button" class="carousel-btn grid transition text-primary" data-dir="-1" aria-label="Previous project" aria-controls="carousel-track">
+        <svg xmlns="http://www.w3.org/2000/svg" width="0.617em" height="0.90em" viewBox="8 6 7.4 12" aria-hidden="true" focusable="false"><path fill="currentColor" d="m14 18l-6-6l6-6l1.4 1.4l-4.6 4.6l4.6 4.6z"/></svg>
+      </button>
+      <button type="button" class="carousel-btn grid transition text-primary" data-dir="1" aria-label="Next project" aria-controls="carousel-track">
+        <svg xmlns="http://www.w3.org/2000/svg" width="0.617em" height="0.90em" viewBox="8 6 7.4 12" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.6 12L8 7.4L9.4 6l6 6l-6 6L8 16.6z"/></svg>
+      </button>
+    </div>
+    <a href="{{ site.links.github }}?tab=repositories" class="flex items-center more-projects relative transition opacity-hover text-accent" target="_blank" rel="noopener noreferrer">
+      View more projects<span class="sr-only"> on GitHub (opens in a new tab)</span>
+    </a>
   </div>
 </section>
 
-<footer class="contact relative flex items-center">
+<section id="contact" class="contact relative flex items-center" aria-labelledby="contact-heading">
   <div class="container relative flex items-center">
     <div class="contact-container">
-      <h2 class="heading text-accent section-title">Get In Touch</h2>
-      <p class="heading section-sub-title text-primary">Have an opportunity to discuss? I'd love to hear from you</p>
-      <nav aria-label="Contact links">
-        <ul class="flex contact-links">
-          {% for link in site.links %}
-          <li>
-            <a href="{{ link[1] }}" class="flex items-center transition opacity-hover" target="_blank" rel="noopener noreferrer">
-            {% case link[0] %}
-              {% when 'linkedin' %}LinkedIn
-              {% when 'github' %}GitHub
-              {% when 'codepen' %}CodePen
-            {% endcase %}
-            <span class="sr-only"> (opens in a new tab)</span>
-            </a>
-          </li>
-          {% endfor %}
-          <li>
-            <a href="mailto:{{ site.email }}" class="flex items-center transition opacity-hover">Email</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="contact-vector">
-      <svg viewBox="39.309 811.867 591.988 1458.590" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g stroke-linecap="round" fill-rule="nonzero" fill="var(--background)" stroke="var(--accent)" stroke-width="2" vector-effect="non-scaling-stroke">
-          <path d="M41.309 1888.770L41.309 1888.770L41.309 1825.488Q102.832 1825.488 144.580 1790.332Q186.328 1755.176 186.328 1697.168L186.328 1697.168L186.328 813.867L249.609 813.867L249.609 1697.168Q249.609 1780.664 188.965 1834.717Q128.320 1888.770 41.309 1888.770ZM41.309 2015.332L41.309 2015.332L41.309 1952.051Q155.566 1952.051 234.229 1877.783Q312.891 1803.516 312.891 1697.168L312.891 1697.168L312.891 813.867L376.172 813.867L376.172 1697.168Q376.172 1829.004 279.053 1922.168Q181.934 2015.332 41.309 2015.332ZM41.309 2141.895L41.309 2141.895L41.309 2078.613Q208.301 2078.613 323.877 1966.992Q439.453 1855.371 439.453 1697.168L439.453 1697.168L439.453 813.867L502.734 813.867L502.734 1697.168Q502.734 1817.578 441.650 1919.971Q380.566 2022.363 274.219 2082.129Q167.871 2141.895 41.309 2141.895ZM41.309 2268.457L41.309 2268.457L41.309 2205.176Q149.414 2205.176 246.533 2164.746Q343.652 2124.316 413.525 2056.201Q483.398 1988.086 524.707 1894.043Q566.016 1800 566.016 1697.168L566.016 1697.168L566.016 813.867L629.297 813.867L629.297 1697.168Q629.297 1813.184 583.154 1918.652Q537.012 2024.121 458.350 2101.025Q379.688 2177.930 270.703 2223.193Q161.719 2268.457 41.309 2268.457Z" />
-        </g>
-      </svg>
+      <h2 id="contact-heading" class="heading text-accent text-uppercase section-title">Get In Touch</h2>
+      <p class="heading section-sub-title text-primary section-title-spacer">Have an opportunity to discuss?<br class="br-lg"> I'd love to hear from you</p>
+      <div class="contact-bottom flex justify-between">
+        <nav class="contact-links" aria-label="Contact links">
+          <ul class="grid">
+            {% for link in site.links %}
+            <li>
+              <a href="{{ link[1] }}" class="flex items-center transition opacity-hover" target="_blank" rel="noopener noreferrer">
+              {% case link[0] %}
+                {% when 'linkedin' %}LinkedIn
+                {% when 'github' %}GitHub
+                {% when 'codepen' %}CodePen
+              {% endcase %}
+              <span class="sr-only"> (opens in a new tab)</span>
+              </a>
+            </li>
+            {% endfor %}
+            <li>
+              <a href="mailto:{{ site.email }}" class="flex items-center transition opacity-hover">Email</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="version text-uppercase" aria-hidden="true">
+          <span>Version {{ site.version }}</span>
+        </div>
+      </div>
     </div>
   </div>
-</footer>
+</section>
