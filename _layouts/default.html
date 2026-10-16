@@ -35,7 +35,8 @@ layout: compress
 
     <link rel="preload" href="/assets/fonts/CabinetGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/assets/css/styles.css">
+    {% capture css %}@import "main";{% endcapture %}
+    <style>{{ css | scssify }}</style>
     <link rel="canonical" href="{{ site.url }}">
   </head>
   <body>
