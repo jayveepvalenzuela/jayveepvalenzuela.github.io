@@ -85,8 +85,8 @@ layout: default
             <div class="works-preview">
               {% assign preview = project.preview | split: "." | first %}
               <picture>
-                <source type="image/avif" srcset="/assets/img/{{ preview }}-480.avif 480w, /assets/img/{{ preview }}-800.avif 800w, /assets/img/{{ preview }}-1200.avif 1200w, /assets/img/{{ preview }}-1920.avif 1920w" sizes="(min-width: 992px) 960px, (min-width: 768px) 720px, (min-width: 576px) 540px, calc(100vw - 3rem)">
-                <source type="image/webp" srcset="/assets/img/{{ preview }}-480.webp 480w, /assets/img/{{ preview }}-800.webp 800w, /assets/img/{{ preview }}-1200.webp 1200w, /assets/img/{{ preview }}-1920.webp 1920w" sizes="(min-width: 992px) 960px, (min-width: 768px) 720px, (min-width: 576px) 540px, calc(100vw - 3rem)">
+                <source type="image/avif" srcset="/assets/img/{{ preview }}-480.avif 480w, /assets/img/{{ preview }}-640.avif 640w, /assets/img/{{ preview }}-800.avif 800w, /assets/img/{{ preview }}-1200.avif 1200w, /assets/img/{{ preview }}-1920.avif 1920w" sizes="(min-width: 992px) 960px, (min-width: 768px) 720px, (min-width: 576px) 540px, calc(100vw - 3rem)">
+                <source type="image/webp" srcset="/assets/img/{{ preview }}-480.webp 480w, /assets/img/{{ preview }}-640.webp 640w, /assets/img/{{ preview }}-800.webp 800w, /assets/img/{{ preview }}-1200.webp 1200w, /assets/img/{{ preview }}-1920.webp 1920w" sizes="(min-width: 992px) 960px, (min-width: 768px) 720px, (min-width: 576px) 540px, calc(100vw - 3rem)">
                 <img class="transition" src="/assets/img/{{ preview }}-1200.webp" alt="Preview of {{ project.name }}" width="1920" height="1200" loading="lazy" decoding="async">
               </picture>
             </div>
