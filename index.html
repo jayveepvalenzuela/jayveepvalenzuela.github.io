@@ -3,7 +3,7 @@ layout: default
 ---
 
 <section class="intro relative flex items-center" aria-labelledby="intro-heading">
-  <div class="container intro-container">
+  <div class="container intro-container fade-in">
     <div class="intro-image-container relative" aria-hidden="true">
       <div class="intro-image relative"></div>
       <div class="sleeping-cat">
@@ -30,8 +30,8 @@ layout: default
 
 <section class="experience is-large relative" aria-labelledby="experience-heading">
   <div class="container">
-    <h2 id="experience-heading" class="heading text-accent text-uppercase section-title">Experience</h2>
-    <ul class="experience-timeline section-title-spacer">
+    <h2 id="experience-heading" class="heading text-accent text-uppercase section-title fade-in">Experience</h2>
+    <ul class="experience-timeline section-title-spacer fade-in">
       {% for exp in site.data.bio.experience %}
       <li>
         <article class="grid experience-timeline-grid">
@@ -65,11 +65,11 @@ layout: default
 </section>
 
 <section class="works is-large relative" aria-roledescription="carousel" aria-labelledby="works-heading">
-  <div class="container">
+  <div class="container fade-in">
     <h2 id="works-heading" class="heading text-accent text-uppercase section-title">Personal Projects</h2>
   </div>
   <div class="carousel-viewport section-title-spacer">
-    <div class="container">
+    <div class="container fade-in">
       <ul id="carousel-track" class="carousel-track flex relative">
         {% for project in site.data.bio.projects %}
         <li class="carousel-slide flex" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ forloop.length }}">
