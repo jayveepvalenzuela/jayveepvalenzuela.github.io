@@ -7,7 +7,9 @@
       "!_site",
       "!index.html",
       "!_layouts/*.html",
-      "!**/*.min.js"
+      "!**/*.min.js",
+      "!assets/js/main.js",
+      "!assets/js/dino.js"
     ]
   },
   "html": {

@@ -31,7 +31,7 @@ links:
   github: "https://github.com/jayveepvalenzuela"
   codepen: "https://codepen.io/jayveepvalenzuela"
 theme_color: "#111111"
-version: "2.0.0"
+version: "2.1.0"
 
 # Build settings
 theme: minima
@@ -60,3 +60,9 @@ sass:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# readable JS source; minified copies are built into assets/js by `npm run build`
+exclude:
+  - src/
+  - package.json
+  - package-lock.json
