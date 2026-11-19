@@ -5,27 +5,7 @@ const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   initAnimations();
   initCarousel();
-  initDino();
 })();
-
-// three.js + the game are only fetched once the visitor asks to play
-function initDino() {
-  const btn = document.querySelector(".dino-play");
-  btn.addEventListener("click", () => {
-    btn.disabled = true;
-    btn.setAttribute("aria-label", "Loading the game");
-    import("/assets/js/dino.js").then(
-      () => {
-        btn.remove();
-        document.querySelector(".dino-teaser").remove();
-      },
-      () => {
-        btn.setAttribute("aria-label", "Couldn't load the game");
-        btn.title = "Couldn't load the game";
-      },
-    );
-  });
-}
 
 function initCarousel() {
   const root = document.querySelector(".works");

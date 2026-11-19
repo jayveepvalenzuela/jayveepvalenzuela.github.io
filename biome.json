@@ -8,8 +8,7 @@
       "!index.html",
       "!_layouts/*.html",
       "!**/*.min.js",
-      "!assets/js/main.js",
-      "!assets/js/dino.js"
+      "!assets/js/main.js"
     ]
   },
   "html": {

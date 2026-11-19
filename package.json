@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "esbuild src/js/main.js src/js/dino.js --minify --outdir=assets/js"
+    "build": "esbuild src/js/main.js --minify --outdir=assets/js"
   },
   "devDependencies": {
     "esbuild": "0.28.2"

@@ -179,73 +179,16 @@ a {
         height: 100%;
       }
 
-      canvas {
+      img {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
-        cursor: pointer;
-        touch-action: manipulation;
+        object-fit: contain;
+        object-position: center bottom;
+        // sink the figure so the shirt is cropped by the box's overflow: hidden
+        translate: 0 15%;
       }
-    }
-
-    .dino-teaser img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      // keep the dino in frame when narrow boxes crop the sides
-      object-position: 20% center;
-    }
-
-    .dino-play {
-      position: absolute;
-      inset: 50% auto auto 50%;
-      translate: -50% -50%;
-      display: grid;
-      place-items: center;
-      width: 4rem;
-      height: 4rem;
-      border-radius: 50%;
-      background-color: #fff;
-      color: var(--accent);
-      // comma rgba(): GitHub Pages' old Ruby Sass rejects the space-separated rgb() syntax
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-      cursor: pointer;
-      transition: scale 0.2s;
-
-      svg {
-        // optical centring: a triangle looks left-heavy when centred by its box
-        translate: 2px 0;
-      }
-
-      &:hover:not(:disabled) {
-        scale: 1.08;
-      }
-
-      &:disabled {
-        cursor: progress;
-        opacity: 0.6;
-      }
-    }
-
-    .dino-hud,
-    .dino-msg {
-      position: absolute;
-      pointer-events: none;
-      color: #fff;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      white-space: pre;
-    }
-
-    .dino-hud {
-      top: 1rem;
-      right: 1.25rem;
-    }
-
-    .dino-msg {
-      inset: auto 0 1.25rem;
-      text-align: center;
-      font-size: 0.875rem;
     }
   }
 
