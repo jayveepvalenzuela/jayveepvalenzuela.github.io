@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Jayvee Valenzuela | Web Developer
+title: Jayvee Valenzuela | Web Developer Portfolio
 email: jayveevalenzuela@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   Jayvee Valenzuela is a web developer based in Manila, Philippines with 5+ years of experience focused on creating responsive, user-friendly web applications.
@@ -31,7 +31,7 @@ links:
   github: "https://github.com/jayveepvalenzuela"
   codepen: "https://codepen.io/jayveepvalenzuela"
 theme_color: "#111111"
-version: "2.1.0"
+version: "2.1.1"
 
 # Build settings
 theme: minima
