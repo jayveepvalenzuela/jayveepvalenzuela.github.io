@@ -31,7 +31,7 @@ links:
   github: "https://github.com/jayveepvalenzuela"
   codepen: "https://codepen.io/jayveepvalenzuela"
 theme_color: "#111111"
-version: "2.1.1"
+version: "2.1.2"
 
 # Build settings
 theme: minima

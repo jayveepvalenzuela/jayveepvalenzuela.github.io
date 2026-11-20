@@ -45,7 +45,7 @@
       "url": "https://pokemon-next-web.vercel.app/",
       "repo": "",
       "tech": ["Next.js", "React", "Tailwind"],
-      "categories": ["web app"]
+      "categories": ["web app", "reference"]
     },
     {
       "name": "COVID-19 PH",
@@ -54,7 +54,7 @@
       "url": "https://covid19-philippines.netlify.app/",
       "repo": "",
       "tech": ["Pug", "Sass", "Bootstrap", "JavaScript", "Gulp"],
-      "categories": ["web app"]
+      "categories": ["web app", "dashboard"]
     }
   ]
 }
